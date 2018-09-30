@@ -1,0 +1,26 @@
+
+#1. Choose any number between 0 and 100 in your mind
+#2. The computer will guess a number and ask you if it is high or low or correct.
+#3. For high, press h. For low, press l. For correct, press c.
+#4. Eventually, the computer will guess your number.
+
+low = 0
+high = 100
+guess = low + high/2
+
+print("Your secret number is " + str(guess))
+customer_input = input("Enter h for high, l for low, c for correct: ");
+
+while(customer_input != "c"):
+    if(customer_input == "h"):
+        high = guess
+        guess = (low + high)/2
+        print("Your secret number is " + str(guess))
+        customer_input = input("Enter h for high, l for low, c for correct: ")
+    elif(customer_input == "l"):
+        low = guess
+        guess = (low + high)/2
+        print("Your secret number is " + str(guess))
+        customer_input = input("Enter h for high, l for low, c for correct: ")
+        
+print("Your secret number is " + str(guess))
